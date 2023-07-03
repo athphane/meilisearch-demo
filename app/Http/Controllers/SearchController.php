@@ -7,15 +7,15 @@ use App\Models\Legislation;
 use App\Models\ReadOnlyConsolidation;
 use App\Models\ReadOnlySection;
 use App\Models\Section;
-use Arr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 
 class SearchController extends Controller
 {
     public function index(Request $request)
     {
-        $search_term = 'et';
+        $search_term = 'ހަނގުރާމަކުރުމަށް ';
 
         $highlighter = function ($meiliSearch, string $query, array $options) {
             $options['attributesToHighlight'] = ['*'];
@@ -52,10 +52,6 @@ class SearchController extends Controller
 
             return $legislation;
         });
-
-        // then go through each of their consolidations and find the ones that match the search parameter
-
-        // then go through all of the sections of each consolidation and find the ones that match the search parameter
 
         return $legislations;
     }

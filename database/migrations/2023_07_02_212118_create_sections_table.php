@@ -11,7 +11,7 @@ return new class extends Migration {
             $table->id();
             $table->foreignIdFor(\App\Models\Consolidation::class)->constrained()->cascadeOnDelete();
             $table->string('title')->nullable();
-            $table->string('text')->nullable();
+            $table->text('text')->nullable();
             $table->timestamps();
         });
     }

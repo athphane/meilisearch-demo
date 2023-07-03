@@ -2,19 +2,18 @@
 
 namespace Database\Factories;
 
+use App\Helpers\Faker\Factory\DhivehiFactory;
 use App\Models\Section;
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Carbon;
 
-class SectionFactory extends Factory
+class SectionFactory extends DhivehiFactory
 {
     protected $model = Section::class;
 
     public function definition(): array
     {
         return [
-            'title'            => $this->faker->word(),
-            'text'             => $this->faker->text(),
+            'title' => $this->dhivehi_faker->words(3),
+            'text'  => $this->dhivehi_faker->words(30),
         ];
     }
 }
